@@ -13,6 +13,7 @@ function SearchDoctor() {
   const handleSearch = async () => {
     try { 
       const response = await axios.post('https://patient-and-health-insurance-management.onrender.com/search_doctor/', { searchValue });
+      console.log("response...",response);
       navigate('/search-doctor-results', { state: { results: response?.data} });
     } catch (error) {
       console.error('Error:', error);
